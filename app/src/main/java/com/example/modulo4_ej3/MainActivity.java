@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Integer primer = Integer.parseInt(editTextprimerNumero.getText().toString());
                 Integer segundo = Integer.parseInt(editTextsegundoNumero.getText().toString());
-                Integer resta = primer + segundo;
+                Integer resta = primer - segundo;
                 Toast.makeText(getBaseContext(),"resultado: "+ resta.toString(), Toast.LENGTH_LONG).show();
             }
 
