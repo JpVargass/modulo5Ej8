@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(editTextprimerNumero.getText().toString().trim().isEmpty() || editTextsegundoNumero.getText().toString().trim().isEmpty()){    // validación
-                    Toast.makeText(getBaseContext(),  "faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(),  "(suma)faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
                     return;
                 }
                  Integer primer = Integer.parseInt(editTextprimerNumero.getText().toString());
@@ -39,13 +39,47 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(editTextprimerNumero.getText().toString().trim().isEmpty() || editTextsegundoNumero.getText().toString().trim().isEmpty()){    // validación
-                    Toast.makeText(getBaseContext(),  "faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(),  "(resta)faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Integer primer = Integer.parseInt(editTextprimerNumero.getText().toString());
                 Integer segundo = Integer.parseInt(editTextsegundoNumero.getText().toString());
                 Integer resta = primer - segundo;
                 Toast.makeText(getBaseContext(),"resultado: "+ resta.toString(), Toast.LENGTH_LONG).show();
+            }
+
+        });
+        dividir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editTextprimerNumero.getText().toString().trim().isEmpty() || editTextsegundoNumero.getText().toString().trim().isEmpty()){
+                    Toast.makeText(getBaseContext(),  "(division)faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Integer primer = Integer.parseInt(editTextprimerNumero.getText().toString());
+                if (Integer.parseInt(editTextsegundoNumero.getText().toString())==0) {
+                    Toast.makeText(getBaseContext(),  "no se puede dividir por 0 " , Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Integer segundo = Integer.parseInt(editTextsegundoNumero.getText().toString());
+                Integer division = primer / segundo;
+                Toast.makeText(getBaseContext(),  "resultado :  "+division , Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            });
+        multiplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(editTextprimerNumero.getText().toString().trim().isEmpty() || editTextsegundoNumero.getText().toString().trim().isEmpty()){    // validación
+                    Toast.makeText(getBaseContext(),  "(multiplicacion)faltan numeros a ingresar " , Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Integer primer = Integer.parseInt(editTextprimerNumero.getText().toString());
+                Integer segundo = Integer.parseInt(editTextsegundoNumero.getText().toString());
+                Integer multiplicacion = primer * segundo;
+                Toast.makeText(getBaseContext(),"resultado: "+ multiplicacion.toString(), Toast.LENGTH_LONG).show();
             }
 
         });
